@@ -73,8 +73,6 @@ def simulate_day():
                 queue[-1][1] += tiempo_servicio  # Agregar el tiempo de servicio al último usuario en la cola
             queue.append([tiempo, tiempo_servicio])
             total_usarios += 1
-
-        
         
         # Calcular tiempos de espera
         tiempo_inicio_servicio = 0
@@ -85,11 +83,11 @@ def simulate_day():
             tiempos_espera.append(tiempo_de_espera)
             tiempo_inicio_servicio += tiempo_servicio
     
-        print(
-            f"Tipo de accion:" , tipo_accion.swapcase(), 
-            "\n\tTiempo de Servicio:" , tiempo_servicio , 
-            "\n\t\t Usuario Atendido en caja" , _ + 1 , "\n"            
-            )
+            print(
+                f"Tipo de accion:" , tipo_accion.swapcase(), 
+                "\n\tTiempo de Servicio:" , tiempo_servicio , 
+                "\n\t\t Usuario Atendido en caja" , _ + 1 , "\n"            
+                )
 
     promedio_tiempo_espera = np.mean(tiempos_espera)
     return promedio_tiempo_espera, contar_usuarios, total_usarios
